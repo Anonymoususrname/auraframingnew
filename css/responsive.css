@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════════
+   responsive.css
+   All media-query overrides for tablet and mobile.
+   Breakpoints: 960px (tablet), 600px (mobile).
+═══════════════════════════════════════════════ */
+
+/* ── Tablet / Small Desktop (≤ 960px) ──────── */
+@media (max-width: 960px) {
+
+  /* Nav */
+  nav            { padding: 0 22px; }
+  .nav-links     { display: none; }
+  .hamburger     { display: flex; }
+
+  /* Sections */
+  .sec           { padding: var(--sec-pad-sm); }
+  .cta-strip     { padding: 56px 24px; }
+
+  /* Home */
+  .feat-split    { grid-template-columns: 1fr; }
+  .feat-right    { min-height: 280px; }
+  .feat-left     { padding: 56px 24px; }
+  .svc-grid      { grid-template-columns: 1fr; }
+  .gallery       { grid-template-columns: 1fr 1fr; }
+
+  /* About */
+  .about-split   { grid-template-columns: 1fr; }
+  .about-txt     { padding: 60px 24px; }
+  .vals-grid     { grid-template-columns: 1fr 1fr; }
+  .team-grid     { grid-template-columns: 1fr 1fr; }
+
+  /* Services */
+  .svc-rows-wrap { padding: 0 24px 56px; }
+  .svc-row       { grid-template-columns: 1fr; padding: 50px 0; }
+  .svc-row .svc-row-img { aspect-ratio: 16/9; }
+  .svc-txt       { padding: 32px 0 0; }
+
+  /* Packages */
+  .pkg           { grid-template-columns: 1fr; }
+  .pkg-lft       { border-right: none; border-bottom: 1px solid rgba(201,169,110,.18); }
+  .pkg.feat .pkg-lft { border-bottom-color: rgba(201,169,110,.15); }
+  .pkg-items     { grid-template-columns: 1fr; }
+
+  /* Careers */
+  .careers-intro { grid-template-columns: 1fr; gap: 36px; }
+  .perks-grid    { grid-template-columns: 1fr 1fr; }
+
+  /* Booking */
+  .book-grid     { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-grid  { grid-template-columns: 1fr; }
+
+  /* Forms */
+  .f-row         { grid-template-columns: 1fr; }
+
+  /* Footer */
+  footer         { padding: 48px 24px 28px; }
+  .foot-top      { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+  /* Page hero */
+  .page-hero     { padding: 52px 24px 40px; min-height: 260px; }
+  .hero-h1       { font-size: 3rem; }
+}
+
+/* ── Mobile (≤ 600px) ───────────────────────── */
+@media (max-width: 600px) {
+
+  /* Home */
+  .hero-h1       { font-size: 2.6rem; letter-spacing: .04em; }
+  .hero-btns     { flex-direction: column; align-items: center; }
+  .gallery       { grid-template-columns: 1fr 1fr; }
+  .stats-row     { flex-wrap: wrap; gap: 24px; }
+
+  /* About */
+  .vals-grid     { grid-template-columns: 1fr; }
+  .team-grid     { grid-template-columns: 1fr; }
+
+  /* Careers */
+  .perks-grid    { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .foot-top      { grid-template-columns: 1fr; }
+}

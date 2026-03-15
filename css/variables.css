@@ -1,0 +1,31 @@
+/* ═══════════════════════════════════════════════
+   variables.css
+   All design tokens used across the project.
+   Edit here to restyle the entire website.
+═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Color Palette ───────────────────────── */
+  --cr:  #faf6f0;   /* cream  — light backgrounds         */
+  --iv:  #f0e8dd;   /* ivory  — secondary light backgrounds */
+  --gd:  #c9a96e;   /* gold   — primary accent             */
+  --gl:  #e8d5b0;   /* gold light — hover/muted gold       */
+  --gk:  #9a7a45;   /* gold dark  — hover state            */
+  --ch:  #141210;   /* charcoal   — dark sections          */
+  --wg:  #6b6259;   /* warm gray  — body text              */
+  --dp:  #0a0907;   /* deep black — footer / loader        */
+
+  /* ── Typography ─────────────────────────── */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Jost', system-ui, sans-serif;
+
+  /* ── Spacing ─────────────────────────────── */
+  --sec-pad:    72px 60px;
+  --sec-pad-sm: 56px 24px;
+
+  /* ── Transitions ─────────────────────────── */
+  --ease-page: cubic-bezier(.77, 0, .175, 1);
+  --t-fast:    0.3s;
+  --t-normal:  0.5s;
+  --t-slow:    0.8s;
+}

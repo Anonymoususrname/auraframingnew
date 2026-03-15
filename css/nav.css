@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════
+   nav.css
+   Sticky navigation bar — solid (dark) and light
+   variants, logo, links, hamburger.
+═══════════════════════════════════════════════ */
+
+nav {
+  position:        sticky;
+  top:             0;
+  z-index:         200;
+  padding:         0 60px;
+  height:          68px;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  transition:      background var(--t-normal), box-shadow var(--t-normal);
+}
+
+/* Dark variant — used on Home (over hero image) */
+nav.solid {
+  background:    rgba(10, 9, 7, .96);
+  backdrop-filter: blur(14px);
+  box-shadow:    0 1px 0 rgba(201,169,110,.18);
+}
+
+/* Light variant — used on all inner pages */
+nav.light {
+  background:    rgba(250, 246, 240, .97);
+  backdrop-filter: blur(14px);
+  box-shadow:    0 1px 0 rgba(201,169,110,.22);
+}
+
+/* ── Logo ─────────────────────────────────── */
+.nav-logo {
+  display:     flex;
+  align-items: center;
+  gap:         11px;
+  cursor:      none;
+}
+
+.nav-logo-img {
+  width:      40px;
+  height:     40px;
+  object-fit: contain;
+  transition: filter var(--t-normal);
+}
+nav.solid .nav-logo-img { filter: brightness(0) invert(1); } /* white on dark */
+nav.light .nav-logo-img { filter: none; }                    /* original on light */
+
+.nav-brand {
+  font-family:    var(--font-serif);
+  font-size:      1.15rem;
+  letter-spacing: .22em;
+  font-weight:    400;
+  line-height:    1;
+  transition:     color var(--t-normal);
+}
+.nav-brand span {
+  display:        block;
+  font-family:    var(--font-sans);
+  font-size:      .42rem;
+  letter-spacing: .4em;
+  font-weight:    300;
+  text-transform: uppercase;
+  color:          var(--gd);
+  margin-top:     2px;
+}
+nav.solid .nav-brand { color: var(--cr); }
+nav.light .nav-brand { color: var(--ch); }
+
+/* ── Links ────────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap:     30px;
+}
+
+.nav-links a {
+  font-size:      .65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  cursor:         none;
+  padding:        6px 0;
+  position:       relative;
+  transition:     color var(--t-fast);
+}
+
+/* Animated underline */
+.nav-links a::after {
+  content:    '';
+  position:   absolute;
+  bottom:     0; left: 0;
+  width:      0;
+  height:     1px;
+  background: var(--gd);
+  transition: width var(--t-fast);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+nav.solid .nav-links a                         { color: rgba(250,246,240,.7); }
+nav.solid .nav-links a:hover,
+nav.solid .nav-links a.active                  { color: var(--gd); }
+
+nav.light .nav-links a                         { color: var(--wg); }
+nav.light .nav-links a:hover,
+nav.light .nav-links a.active                  { color: var(--gd); }
+
+/* ── Hamburger (mobile) ───────────────────── */
+.hamburger {
+  display:        none;
+  flex-direction: column;
+  gap:            5px;
+  padding:        5px;
+  cursor:         none;
+}
+
+.hamburger span {
+  display:    block;
+  width:      24px;
+  height:     1px;
+  background: var(--cr);
+  transition: all var(--t-fast);
+}
+nav.light .hamburger span { background: var(--ch); }
+
+/* Close button (mobile nav overlay) */
+.close-nav {
+  display:   none;
+  position:  fixed;
+  top: 22px; right: 22px;
+  font-size: 1.5rem;
+  color:     var(--cr);
+  z-index:   1001;
+  cursor:    none;
+}
+
+/* ── Mobile nav open state ────────────────── */
+.mobile-open .nav-links {
+  display:         flex !important;
+  flex-direction:  column;
+  position:        fixed;
+  inset:           0;
+  background:      var(--dp);
+  align-items:     center;
+  justify-content: center;
+  gap:             28px;
+  z-index:         999;
+}
+.mobile-open .nav-links a { font-size: 1.3rem; color: var(--cr) !important; }
+.mobile-open .close-nav   { display: block; }

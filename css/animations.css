@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════
+   animations.css
+   All @keyframes definitions and the .reveal
+   scroll-triggered fade-up utility class.
+═══════════════════════════════════════════════ */
+
+/* ── Keyframes ────────────────────────────── */
+
+/* Used by loader logo and brand text */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Used by loader underline */
+@keyframes expandLine {
+  from { width: 0; }
+  to   { width: 180px; }
+}
+
+/* Used by hero background image */
+@keyframes heroBgZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1); }
+}
+
+/* Used by hero logo ring glow */
+@keyframes glowing {
+  0%, 100% { box-shadow: 0 0 16px rgba(201,169,110,.3); }
+  50%       { box-shadow: 0 0 40px rgba(201,169,110,.7); }
+}
+
+/* Used by marquee ticker */
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Used by hero scroll hint */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);  }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── Scroll Reveal ────────────────────────── */
+/*
+   Add class="reveal" to any element.
+   js/reveal.js uses IntersectionObserver to
+   add .visible when the element enters the viewport.
+*/
+.reveal {
+  opacity:    0;
+  transform:  translateY(36px);
+  transition: opacity var(--t-slow) ease, transform var(--t-slow) ease;
+}
+.reveal.visible {
+  opacity:   1;
+  transform: translateY(0);
+}

@@ -1,0 +1,117 @@
+/* ═══════════════════════════════════════════════
+   reset.css
+   Normalise browser defaults and set base styles.
+═══════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin:     0;
+  padding:    0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family:            var(--font-sans);
+  background-color:       var(--ch);
+  color:                  var(--cr);
+  overflow-x:             hidden;
+  cursor:                 none;   /* replaced by custom cursor */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display:   block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color:           inherit;
+  cursor:          none;
+}
+
+ul { list-style: none; }
+
+button {
+  background:  none;
+  border:      none;
+  cursor:      none;
+  font-family: var(--font-sans);
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* ── Base typography ──────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+/* ── Shared heading / eyebrow helpers ──────── */
+.eyebrow {
+  font-family:    var(--font-sans);
+  font-size:      .6rem;
+  letter-spacing: .48em;
+  text-transform: uppercase;
+  color:          var(--gd);
+  display:        block;
+  margin-bottom:  14px;
+}
+
+.h2 {
+  font-family: var(--font-serif);
+  font-size:   clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+.h2 em       { font-style: italic; color: var(--gk); }
+.h2.light    { color: var(--cr); }
+.h2.light em { color: var(--gl); }
+
+.body-p       { font-size: .88rem; color: var(--wg); line-height: 1.9; font-weight: 300; }
+.body-p.light { color: rgba(250,246,240,.6); }
+
+/* ── Section wrapper ──────────────────────── */
+.sec           { padding: var(--sec-pad); }
+.sec.ivory     { background: var(--iv); }
+.sec.dark      { background: var(--ch); color: var(--cr); }
+.sec-center    { text-align: center; }
+
+/* ── Utility buttons ──────────────────────── */
+.btn-gold {
+  padding:        13px 36px;
+  background:     var(--gd);
+  color:          var(--dp);
+  font-size:      .65rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  border:         none;
+  cursor:         none;
+  transition:     background var(--t-fast), transform .2s;
+}
+.btn-gold:hover { background: var(--gk); transform: translateY(-1px); }
+
+.btn-ghost {
+  padding:        13px 36px;
+  background:     transparent;
+  color:          var(--cr);
+  font-size:      .65rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  border:         1px solid rgba(250,246,240,.4);
+  cursor:         none;
+  transition:     all var(--t-fast);
+}
+.btn-ghost:hover { border-color: var(--gd); color: var(--gd); }
